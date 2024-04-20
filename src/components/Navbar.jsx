@@ -1,6 +1,7 @@
 import React from 'react';
 import { navItems } from "../constants";
 import { IoMdSearch } from "react-icons/io";
+import { Link } from 'react-router-dom';
 const Navbar = () => {
  return (
    <nav className="sticky top-0 z-50 py-3 backdrop-blur-lg border-b border-neutral-700/80" style={{ height:'10vh',position:'fixed',width:'100vw',fontFamily:'Gill Sans',fontWeight:'bold',backgroundColor:'black'}}>
@@ -14,7 +15,7 @@ const Navbar = () => {
            <ul className='hidden lg:flex ml-14 space-x-12' style={{marginTop:'10px'}}>
              {navItems.map((item, index) => (
                <li key={index}>
-                 <a href={item.href}>{item.label}</a>
+                 <Link to={item.to}>{item.label}</Link>
                </li>
              ))}
              <div>
