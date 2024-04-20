@@ -19,7 +19,7 @@ const App = () => {
     <div>
  <Navbar/>
 
- <ProductDisplay/>
+ <HeroPage/>
  <Footer />
  
 
