@@ -1,51 +1,76 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { FaClock } from 'react-icons/fa'; 
 
 const BiddingPage = () => {
-  const [maxBid, setMaxBid] = useState(100); // Example initial max bid
-  const [price, setPrice] = useState(200); // Example initial price
-  const [sellerInfo, setSellerInfo] = useState({
-    name: 'Seller Name',
-    email: 'seller@example.com',
-  });
+  const endTime = new Date('2024-04-25T12:00:00Z');
 
-  // Example function to handle bidding
-  const handleBid = () => {
-    // Your bidding logic here
-    // For example, increase max bid and update price
-    const newMaxBid = maxBid + 10;
-    const newPrice = price + 10;
-    setMaxBid(newMaxBid);
-    setPrice(newPrice);
+  const calculateTimeLeft = () => {
+    const difference = endTime - new Date();
+    let timeLeft = {};
+
+    if (difference > 0) {
+      timeLeft = {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      };
+    }
+
+    return timeLeft;
   };
 
-  return (
-    <div className="bg-gray-900 min-h-screen flex justify-center items-center relative">
-      {/* Background image overlay */}
-      <div className="absolute inset-0 bg-gray-900 opacity-50 z-0"></div>
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
-      <div className="bg-red-700 p-8 rounded-lg text-white relative z-10">
-        <h1 className="text-3xl font-bold mb-4">Bidding Page</h1>
-        <div className="mb-4">
-          <p className="text-lg font-bold">Time Remaining: 2 days 5 hours</p>
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  });
+
+  // Array of bidder details
+  const bidders = [
+    { name: 'John Doe', maxBid: 5000, minBid: 1000 },
+    { name: 'Jane Smith', maxBid: 4500, minBid: 1200 },
+    { name: 'Alice Johnson', maxBid: 4800, minBid: 1100 },
+    { name: 'Bob Williams', maxBid: 5200, minBid: 1050 },
+    { name: 'Emily Brown', maxBid: 4900, minBid: 1150 },
+  ];
+
+  return (
+    <div className="flex flex-wrap justify-center gap-4">
+      {/* Map through bidders array */}
+      {bidders.map((bidder, index) => (
+        <div key={index} className="max-w-md mx-auto bg-opacity-50 rounded-lg overflow-hidden shadow-md">
+          <div className="h-64 overflow-hidden relative">
+            <img
+              src="https://via.placeholder.com/500x600"
+              alt="Bidding item"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute top-0 left-0 m-4 flex items-center">
+              <FaClock className="text-white mr-2" />
+              <span className="text-white">
+                {timeLeft.days}d {timeLeft.hours}h {timeLeft.minutes}m {timeLeft.seconds}s
+              </span>
+            </div>
+          </div>
+          <div className="p-4 flex flex-col items-center">
+            {/* Max and Min Bid */}
+            <div className="text-white text-sm mb-2">
+              Max Bid: ${bidder.maxBid} | Min Bid: ${bidder.minBid}
+            </div>
+            {/* Bidder name */}
+            <div className="text-white text-lg mb-2">Bidder: {bidder.name}</div>
+            {/* Bid Now option */}
+            <button className="bg-red-500 text-white font-bold py-2 px-4 rounded-full">
+              Bid Now
+            </button>
+          </div>
         </div>
-        <div className="mb-4">
-          <p className="text-lg font-bold">Max Bid: ${maxBid}</p>
-        </div>
-        <div className="mb-4">
-          <p className="text-lg font-bold">Price: ${price}</p>
-        </div>
-        <div className="mb-4">
-          <p className="text-lg font-bold">Seller Information:</p>
-          <p>Name: {sellerInfo.name}</p>
-          <p>Email: {sellerInfo.email}</p>
-        </div>
-        <button
-          className="bg-white text-red-700 font-bold py-2 px-4 rounded transition duration-300 hover:bg-red-700 hover:text-white"
-          onClick={handleBid}
-        >
-          Bid Now
-        </button>
-      </div>
+      ))}
     </div>
   );
 };

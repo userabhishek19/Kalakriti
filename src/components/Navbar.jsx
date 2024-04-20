@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className="container px-4 mx-auto relative lg:text-sm">
         <div className="flex justify-between items-center">
           <div className="flex items-center flex-shrink-0">
-            <img className="h-10 w-10 mr-2" src={"logo"} alt="Logo" />
+            <img className="h-10 w-10 mr-2" src={"https://images.unsplash.com/photo-1695740639466-7baecca4224d?q=80&w=2836&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"} alt="Logo" style={{borderRadius:'50%', marginLeft:'-80px'}} />
             <span className="text-xl tracking-tight">KALARITI</span>
           </div>
           <ul className="hidden lg:flex ml-14 space-x-12">
