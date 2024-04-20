@@ -14,6 +14,7 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Addproduct from './pages/addproduct';
+import SlidingImages from './pages/SlidingImages';
 
 
 
@@ -65,9 +66,6 @@ const App = () => {
   return (
     <div>
   
-
-
-
 
 <Addproduct/>
  
