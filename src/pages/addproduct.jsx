@@ -4,9 +4,9 @@ const Addproduct = () => {
   return (
     <div className='' style={{backgroundColor:'black',height:'100vh',width:'100vw',marginTop:'80px',alignItems:'center',border:'1px solid black',marginBottom:'30%'}}>
       <br />
-      <div  style={{backgroundColor:'wheat',height:'500px',width:'400px',marginLeft:'30%',marginTop:'5%',border:'1px solid black',borderRadius:'5px'}}>
-      <div style={{marginTop:'2px',marginBottom:'2px',width:'100%',backgroundColor:'white'}}>
-      <input type="text" className="placeholder-black bg-gray-400" placeholder='name' style={{width:'100%',marginTop:'0px',border:'2px solid white',borderRadius:'10px',textAlign:'center','::placeholder': { color: 'white' } }}/> <br />
+      <div  style={{backgroundColor:'grey',height:'500px',width:'400px',marginLeft:'30%',marginTop:'5%',border:'2px solid white',borderRadius:'5px'}}>
+      <div style={{marginTop:'4px',marginBottom:'2px',width:'100%',backgroundColor:'white',position:'relative'}}>
+      <input type="text" className="placeholder-black bg-gray-400" placeholder='name' style={{width:'100%',marginTop:'0px',border:'2px solid white',borderRadius:'10px',textAlign:'center','::placeholder': { color: 'white' },position:'absolute',top:'2%' }}/> <br />
       </div>
       <div style={{marginTop:'2px',marginBottom:'2px',width:'100%'}}>
       <input type="file"  className="placeholder-black bg-gray-400" placeholder='file' style={{width:'100%',marginTop:'25px',border:'2px solid white',borderRadius:'10px',textAlign:'center','::placeholder': { color: 'white' } }}/><br />
