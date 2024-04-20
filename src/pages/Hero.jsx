@@ -42,7 +42,7 @@ const HeroPage = () => {
            <div style={{ display: 'flex', flex: 1 }}>
                <div style={{ height: '100%', width: '50%', backgroundColor: 'black', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                    <div style={{height:'700px',width:'700px',margin:'30px', borderStyle:'solid',backgroundColor:'black',textAlign:'center',position:'relative'}}>
-                       <div style={{marginTop:'160px'}}>
+                       <div style={{marginTop:'130px'}}>
                    <h1 className="text-4xl sm:text-7xl lg:text-4xl  tracking-wide" style={{marginTop:'45px',textAlign:'center',fontWeight:'bolder'}}>
            Artisan Avenue
        <span className="bg-gradient-to-r from-red-500 to-red-800 text-transparent bg-clip-text" style={{fontWeight:'bolder',fontFamily:'Gills Sans',fontSize:'40px'}}>
@@ -75,7 +75,7 @@ const HeroPage = () => {
 
 
 In your code, the parent <div> elements don't have position: 'relative' or any other positioning property set, so when you set position: 'absolute' on the inner <div>, it positions itself relative to the initial containing block (usually the <body> element), not its parent <div>. */}
-               <div style={{height:'700px',width:'700px',marginTop:'30px', borderStyle:'solid',backgroundColor:'black',position:'relative',display:'flex',alignItems:'center',justifyContent:'center'}}>
+               <div style={{height:'700px',width:'700px',marginTop:'30px', marginLeft:'15%',borderStyle:'solid',backgroundColor:'black',position:'relative',display:'flex',alignItems:'center',justifyContent:'center'}}>
                    <div>
                    <div style={{height:'300px',width:'200px', border:'1px solid black',borderRadius:'20px',marginLeft:'10px',marginTop:'10px',overflow:'hidden',backgroundColor:'black'}}>
                         <img src="https://plus.unsplash.com/premium_photo-1702634274351-8e7fcb905df9?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" style={{width:'100%',height:'100%',objectFit:'cover'}}/>
