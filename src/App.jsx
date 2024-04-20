@@ -61,7 +61,7 @@ const App = () => {
 
 
 
-
+<Addproduct/>
  
  <RouterProvider router={router}/>
     </div>
