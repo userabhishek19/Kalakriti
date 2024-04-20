@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -7,7 +8,6 @@ const Register = () => {
     email: '',
     password: '',
     name: '',
-    contactno: '',
   });
   const [err, setErr] = useState(null);
   const navigate = useNavigate();
@@ -19,10 +19,20 @@ const Register = () => {
       [name]: value,
     }));
   };
+  
 
   const handleClick = async (e) => {
     e.preventDefault();
+    try{
+    
+      await axios.post("http://localhost:8000/api/auth/register",inputs)
+      navigate("/")
+    }catch(err){
+      setErr(err.response.data);
+    }
+
   };
+
 
   return (
     <div>
@@ -65,13 +75,6 @@ const Register = () => {
                       type="text"
                       placeholder="Name"
                       name="name"
-                      onChange={handleChange}
-                      className="border-none border-b-2 border-blue-100 p-2 rounded-md text-white::placeholder" // Adjusted placeholder color here
-                    />
-                    <input
-                      type="text"
-                      placeholder="Contact Number"
-                      name="contactno"
                       onChange={handleChange}
                       className="border-none border-b-2 border-blue-100 p-2 rounded-md text-white::placeholder" // Adjusted placeholder color here
                     />

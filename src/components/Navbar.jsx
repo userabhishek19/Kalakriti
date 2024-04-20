@@ -1,9 +1,12 @@
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 
 import { navItems } from "../constants";
+import { Link } from "react-router-dom";
+import { AuthContext } from "../context/authContext";
 
 const Navbar = () => {
+  const {currentUser}=useContext(AuthContext);
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
 
   const toggleNavbar = () => {
@@ -29,15 +32,17 @@ const Navbar = () => {
           <a href="#" className="py-2 px-3 border rounded-md">
               Chat with Us
             </a>
-            <a href="#" className="py-2 px-3 border rounded-md">
+          {  !currentUser?<Link to="/login" className="py-2 px-3 border rounded-md">
               Sign In
-            </a>
-            <a
-              href="#"
+            </Link>:<div></div>}
+           { !currentUser?<Link
+              to="/register"
               className="bg-gradient-to-r from-red-500 to-red -900 py-2 px-3 rounded-md"
             >
               Create an account
-            </a>
+            </Link>:<Link to="/bid"
+              className="bg-gradient-to-r from-red-500 to-red -900 py-2 px-3 rounded-md">BID ON ANTIQUES</Link>
+}
           </div>
           <div className="lg:hidden md:flex flex-col justify-end">
             <button onClick={toggleNavbar}>

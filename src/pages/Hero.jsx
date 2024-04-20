@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 const HeroPage = () => {
@@ -11,12 +12,12 @@ const HeroPage = () => {
 
                BIDDING:
                <span style={{marginLeft:'5px',marginTop:'3px',}}>Get the item before its too late</span>
-               <a className="bg-gradient-to-r from-red-500 to-red-800 text-transparent bg-clip-text"
-         href="#"
+               <Link className="bg-gradient-to-r from-red-500 to-red-800 text-transparent bg-clip-text"
+         to="/"
          style={{marginLeft:'10px', textDecoration:'underline',textDecorationColor:'red'}}
        >
        Register Now
-       </a>
+       </Link>
            </h3>
 
 
