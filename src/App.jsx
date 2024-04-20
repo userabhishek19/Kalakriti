@@ -12,6 +12,8 @@ import ProductDisplay from './pages/ProductDisplay'
 
 
 
+
+
 const App = () => {
   return (
     <div>
@@ -20,6 +22,8 @@ const App = () => {
  <ProductDisplay/>
  <Footer />
  
+
+
 
 
     </div>
