@@ -5,12 +5,16 @@ import Footer from './components/Footer'
 
 
 
+
+
 const App = () => {
   return (
     <div>
  <Navbar/>
  <HeroPage/>
  <Footer />
+
+
 
 
     </div>
