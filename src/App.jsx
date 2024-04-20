@@ -5,6 +5,7 @@ import {
   Outlet,
   Navigate,
 } from "react-router-dom";
+
 import Navbar from './components/Navbar'
 import HeroPage from './pages/Hero'
 import Footer from './components/Footer'
@@ -12,6 +13,8 @@ import ProductDisplay from './pages/ProductDisplay'
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Home from './pages/Home';
+import SlidingImages from './pages/SlidingImages';
+
 // import { Home } from 'lucide-react';
 
 
@@ -19,11 +22,13 @@ import Home from './pages/Home';
 
 
 const App = () => {
+
   const Layout=()=>{
     return (
       <div>
         <Navbar/>
         <Outlet/>
+      
       </div>
     )
   }
@@ -49,14 +54,23 @@ const App = () => {
 {
   path:"/register",
   element:<Register/>,
-}])
+},
+{
+  path:"/stories",
+  element:<SlidingImages />
+}
+])
   return (
     <div>
  {/* <Navbar/>
 
  <HeroPage/>
  <Footer /> */}
+  
+   
+  
  <RouterProvider router={router}/>
+ 
     </div>
   )
 }

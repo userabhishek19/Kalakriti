@@ -6,6 +6,8 @@ import ProductDisplay from './ProductDisplay';
 import HeroPage from './Hero';
 import Footer from '../components/Footer';
 import BiddingPage from './BiddingPage';
+import SlidingImages from './SlidingImages';
+
 
 const Home = () => {
   return (
@@ -17,6 +19,8 @@ const Home = () => {
 
  <Footer />
  <BiddingPage/>
+ <SlidingImages/>
+
     </div>
   );
 };
