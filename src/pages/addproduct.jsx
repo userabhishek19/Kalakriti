@@ -4,7 +4,7 @@ const Addproduct = () => {
   return (
     <div style={{ backgroundColor: '#333', minHeight: '110vh', display: 'flex', justifyContent: 'center', alignItems: 'center', paddingBottom: '150px' }}>
      
-      <div style={{ backgroundColor: '#f0f0f0', height: '600px', width: '400px', border: '2px solid #fff', borderRadius: '10px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px' }}>
+      <div style={{ backgroundColor: '#f0f0f0', height: '600px', width: '350px', border: '2px solid #fff', borderRadius: '10px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)', display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '20px',margin:'50px',margintop:'20px' }}>
       <div>
         <h1  className="bg-gradient-to-r from-black to-purple-600 text-transparent bg-clip-text mix-blend-mode-difference"style={{fontFamily:'Gills Sans',fontWeight:'bolder',fontSize:'40px'}}>Add Product</h1>
       </div>
