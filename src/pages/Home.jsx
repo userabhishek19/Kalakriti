@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import ProductDisplay from './ProductDisplay';
 import HeroPage from './Hero';
 import Footer from '../components/Footer';
+import BiddingPage from './BiddingPage';
 
 const Home = () => {
   return (
@@ -12,7 +13,10 @@ const Home = () => {
        
 
  <HeroPage/>
+ 
+
  <Footer />
+ <BiddingPage/>
     </div>
   );
 };
