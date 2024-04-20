@@ -12,6 +12,10 @@ import ProductDisplay from './pages/ProductDisplay'
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Home from './pages/Home';
+import Addproduct from './pages/addproduct';
+
+
+
 // import { Home } from 'lucide-react';
 
 
@@ -52,10 +56,13 @@ const App = () => {
 }])
   return (
     <div>
- {/* <Navbar/>
+  
 
- <HeroPage/>
- <Footer /> */}
+
+
+
+
+ 
  <RouterProvider router={router}/>
     </div>
   )
