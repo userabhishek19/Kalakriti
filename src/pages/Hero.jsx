@@ -4,11 +4,10 @@ import React from 'react';
 const HeroPage = () => {
    return (
       
-       <div style={{ height: '100vh', width: '100%', backgroundColor: 'black', display: 'flex', flexDirection: 'column' }}>
+       <div style={{ height: '100vh', width: '100vw', backgroundColor: 'black', display: 'flex', flexDirection: 'column' }}>
           
            <div style={{backgroundColor:'black',height:'10vh',width:'100%',marginTop:'7%',padding:'0%',marginLeft:'10px',textAlign:'center',fontFamily:'Gill Sans',fontSize:'25px'}}>
            <h3>
-
                BIDDING:
                <span style={{marginLeft:'5px',marginTop:'3px',}}>Get the item before its too late</span>
                <a className="bg-gradient-to-r from-red-500 to-red-800 text-transparent bg-clip-text"
@@ -22,7 +21,7 @@ const HeroPage = () => {
 
            </div>
            <div style={{ display: 'flex', flex: 1 }}>
-               <div style={{ height: '100%', width: '50%', backgroundColor: 'black', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+               <div style={{ height: '100vh', width: '50vw', backgroundColor: 'black', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                    <div style={{height:'700px',width:'700px',margin:'30px', borderStyle:'solid',backgroundColor:'black',textAlign:'center',position:'relative'}}>
                        <div style={{marginTop:'130px'}}>
                    <h1 className="text-4xl sm:text-7xl lg:text-4xl  tracking-wide" style={{marginTop:'45px',textAlign:'center',fontWeight:'bolder'}}>
@@ -50,7 +49,7 @@ const HeroPage = () => {
      </div>
                    </div>
                </div>
-               <div style={{ height: '100%', width: '50%', backgroundColor: 'black', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+               <div style={{ height: '100vh', width: '50vw', backgroundColor: 'black', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                {/*When you set position: 'absolute' on an element, it positions itself relative to the nearest positioned ancestor.
                If there's no positioned ancestor, it positions itself relative to the initial containing block, which is
                typically the <body> element.
