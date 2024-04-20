@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './components/Navbar'
 import HeroPage from './pages/Hero'
 import Footer from './components/Footer'
+import BiddingPage from './pages/BiddingPage'
 
 
 
@@ -13,6 +14,7 @@ const App = () => {
  <Navbar/>
  <HeroPage/>
  <Footer />
+ <BiddingPage/>
 
 
 
