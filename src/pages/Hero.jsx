@@ -9,24 +9,6 @@ const HeroPage = () => {
            <div style={{backgroundColor:'black',height:'10vh',width:'100%',marginTop:'7%',padding:'0%',marginLeft:'10px',textAlign:'center',fontFamily:'Gill Sans',fontSize:'25px'}}>
            <h3>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-              
                BIDDING:
                <span style={{marginLeft:'5px',marginTop:'3px',}}>Get the item before its too late</span>
                <a className="bg-gradient-to-r from-red-500 to-red-800 text-transparent bg-clip-text"
