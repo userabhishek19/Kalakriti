@@ -29,7 +29,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="mt-20 border-t py-10 border-neutral-700 " style={{backgroundColor:'slategray',height:'40vh',width:'100vw'}}>
+    <footer className="mt-20 border-t py-10  " style={{backgroundColor:'bg-gray-800',height:'50vh',width:'100vw'}}>
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
         <div>
           <h3 className="text-md font-semibold mb-4" style={{marginTop:'15%',marginLeft:'10%'}}>Resources</h3>

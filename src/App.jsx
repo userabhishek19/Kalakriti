@@ -18,7 +18,6 @@ import SlidingImages from './pages/SlidingImages';
 
 
 
-// import { Home } from 'lucide-react';
 
 
 
@@ -67,7 +66,7 @@ const App = () => {
     <div>
   
 
-<Addproduct/>
+
  
  <RouterProvider router={router}/>
  

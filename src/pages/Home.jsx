@@ -18,8 +18,8 @@ const Home = () => {
  
 
  <Footer />
- <BiddingPage/>
- <SlidingImages/>
+ 
+ 
 
     </div>
   );
