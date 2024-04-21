@@ -12,20 +12,20 @@ import ProductDisplay from './pages/ProductDisplay'
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Home from './pages/Home';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import BiddingPage from './pages/BiddingPage';
+import Addproduct from './pages/addproduct';
 // import { Home } from 'lucide-react';
-
-
-
-
-
 const App = () => {
+  const queryClient = new QueryClient();
   const Layout=()=>{
     return (
+      <QueryClientProvider client={queryClient}>
       <div>
         <Navbar/>
         <Outlet/>
       </div>
+      </QueryClientProvider>
     )
   }
   const router=createBrowserRouter([{
@@ -45,6 +45,10 @@ const App = () => {
   path:"/bid",
   element:<BiddingPage/>
 },
+{
+  path:"/AddProduct",
+  element: <Addproduct/>
+},
  ]
  },
 {
@@ -57,10 +61,6 @@ const App = () => {
 }])
   return (
     <div>
- {/* <Navbar/>
-
- <HeroPage/>
- <Footer /> */}
  <RouterProvider router={router}/>
     </div>
   )

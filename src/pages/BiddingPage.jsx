@@ -1,9 +1,18 @@
+import { useQuery } from '@tanstack/react-query';
 import React, { useState, useEffect } from 'react';
 import { FaClock } from 'react-icons/fa'; 
+import { makeRequest } from '../axios';
 
 const BiddingPage = () => {
   const endTime = new Date('2024-04-25T12:00:00Z');
-
+  const { isLoading, error, data } = useQuery(
+    {
+      queryKey: ["bidders"],
+      queryFn: () => makeRequest.get("/bidders").then((res) => {
+        return res.data;
+      })
+    }
+  )
   const calculateTimeLeft = () => {
     const difference = endTime - new Date();
     let timeLeft = {};
@@ -29,24 +38,31 @@ const BiddingPage = () => {
 
     return () => clearTimeout(timer);
   });
-
+  const bidders=data
+  console.log(data)
   // Array of bidder details
-  const bidders = [
-    { name: 'John Doe', maxBid: 5000, minBid: 1000 },
-    { name: 'Jane Smith', maxBid: 4500, minBid: 1200 },
-    { name: 'Alice Johnson', maxBid: 4800, minBid: 1100 },
-    { name: 'Bob Williams', maxBid: 5200, minBid: 1050 },
-    { name: 'Emily Brown', maxBid: 4900, minBid: 1150 },
-  ];
+  // const bidders = [
+  //   { name: 'John Doe', maxBid: 5000, minBid: 1000 },
+  //   { name: 'Jane Smith', maxBid: 4500, minBid: 1200 },
+  //   { name: 'Alice Johnson', maxBid: 4800, minBid: 1100 },
+  //   { name: 'Bob Williams', maxBid: 5200, minBid: 1050 },
+  //   { name: 'Emily Brown', maxBid: 4900, minBid: 1150 },
+  // ];
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
   return (
-    <div className="flex flex-wrap justify-center gap-4">
+    <div className="flex flex-wrap justify-center gap-4 mt-20">
       {/* Map through bidders array */}
       {bidders.map((bidder, index) => (
         <div key={index} className="max-w-md mx-auto bg-opacity-50 rounded-lg overflow-hidden shadow-md">
           <div className="h-64 overflow-hidden relative">
             <img
-              src="https://via.placeholder.com/500x600"
+              src={`uploads/${bidder.product_img}`}
               alt="Bidding item"
               className="w-full h-full object-cover"
             />
@@ -59,15 +75,16 @@ const BiddingPage = () => {
           </div>
           <div className="p-4 flex flex-col items-center">
             {/* Max and Min Bid */}
+            <div className="text-white text-lg mb-2">Product: {bidder.product_name}</div>
             <div className="text-white text-sm mb-2">
-              Max Bid: ${bidder.maxBid} | Min Bid: ${bidder.minBid}
+               Bid: ${bidder.bidder_price}
             </div>
+
             {/* Bidder name */}
-            <div className="text-white text-lg mb-2">Bidder: {bidder.name}</div>
+            <div className="text-white text-lg mb-2">Bidder: {bidder.bidder_name}</div>
+
             {/* Bid Now option */}
-            <button className="bg-red-500 text-white font-bold py-2 px-4 rounded-full">
-              Bid Now
-            </button>
+           
           </div>
         </div>
       ))}
