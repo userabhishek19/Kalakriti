@@ -20,7 +20,6 @@ const Navbar = () => {
           <img className='h-10 w-10 mr-2' src="https://images.unsplash.com/photo-1695740639466-7baecca4224d?q=80&w=2836&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" style={{borderRadius:'50%', marginLeft:'-60px'}}/>
 
             <span className="text-xl tracking-tight" style={{marginTop:'10px'}}>KALAKRITI</span>
-            <span className="text-xl tracking-tight" style={{marginTop:'10px'}}>KALAKRITI</span>
           </div>
           <ul className="hidden lg:flex ml-14 space-x-12" style={{marginTop:'10px'}}>
             {navItems.map((item, index) => (
@@ -42,9 +41,9 @@ const Navbar = () => {
             <div style={{marginLeft:'40px',marginTop:'10px'}}>
             <a
               href="#"
-              className="bg-gradient-to-r from-red-500 to-red -900 py-2 px-3 rounded-md"
+              className="bg-gradient-to-r from-red-500 to-red-900 py-2 px-2  rounded-md"
             >
-              Create an account
+              Create an account 
             </a>
             </div>
           </div>
