@@ -10,7 +10,7 @@ export const navItems = [
   { label: "HOME", href: "/" },
   { label: "SHOP", href: "/shop" },
   { label: "CONTACT US", href: "#" },
-  { label: "STORIES", href: "#" },
+  { label: "STORIES", href: "/stories" },
 ];
 
 

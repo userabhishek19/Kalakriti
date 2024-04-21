@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {
   createBrowserRouter,
   RouterProvider,
   Outlet,
   Navigate,
 } from "react-router-dom";
+
 import Navbar from './components/Navbar'
 import HeroPage from './pages/Hero'
 import Footer from './components/Footer'
@@ -15,15 +16,27 @@ import Home from './pages/Home';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import BiddingPage from './pages/BiddingPage';
 import Addproduct from './pages/addproduct';
+import SlidingImages from './pages/SlidingImages';
+import { AuthContext } from './context/authContext';
+
 // import { Home } from 'lucide-react';
+
+
+
+
+
+
+
 const App = () => {
-  const queryClient = new QueryClient();
+  const {currentUser}=useContext(AuthContext);
+  const queryClient=new QueryClient();
   const Layout=()=>{
     return (
       <QueryClientProvider client={queryClient}>
       <div>
         <Navbar/>
         <Outlet/>
+      
       </div>
       </QueryClientProvider>
     )
@@ -49,6 +62,10 @@ const App = () => {
   path:"/AddProduct",
   element: <Addproduct/>
 },
+{
+  path:"/stories",
+  element:<SlidingImages />
+}
  ]
  },
 {
@@ -58,10 +75,13 @@ const App = () => {
 {
   path:"/register",
   element:<Register/>,
-}])
+},
+
+])
   return (
     <div>
  <RouterProvider router={router}/>
+ 
     </div>
   )
 }
